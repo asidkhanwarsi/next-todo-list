@@ -1,0 +1,122 @@
+/* Empty state */
+.taskList:empty::after {
+  content: 'No tasks yet. Add your first task above!';
+  display: block;
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem;
+  font-size: 0.975rem;
+}
+
+/* Task list container */
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar styling */
+.taskList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.taskList::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.taskList::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Task item styling */
+.taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.taskList li:last-child {
+  border-bottom: none;
+}
+
+.taskList li:hover {
+  background-color: #f8fafc;
+}
+
+/* Label and checkbox container */
+.taskList li label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+/* Checkbox styling */
+.taskList li input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+/* Completed task styling */
+.completed {
+  background-color: #f8fafc;
+}
+
+.completed label {
+  text-decoration: line-through;
+  color: #9ca3af !important;
+}
+
+/* Delete button styling */
+.taskList li button {
+  padding: 0.5rem 1rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 1rem;
+}
+
+.taskList li button:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.taskList li button:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .taskList li {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .taskList li button {
+    margin-top: 0.5rem;
+    width: 100%;
+    margin-left: 0;
+  }
+}
